@@ -7,20 +7,21 @@
 #define MOTOR_R1_PIN 9
 #define MOTOR_R2_PIN 10
 
-#define LDR_L_PIN A1 // Mapped to ATMega328P PCO (Pin 23) on Arduino Uno
-#define LDR_R_PIN A2 // Mapped to ATMega328P PC1 (Pin 24) on Arduino Uno
+
+#define LDR_L_PIN A2 // Mapped to ATMega328P PCO (Pin 23) on Arduino Uno
+#define LDR_R_PIN A1 // Mapped to ATMega328P PC1 (Pin 24) on Arduino Uno
 
 #define ADC_RESOLUTION         10                    // 10-Bit ADC
 #define ADC_OUTPUT_RANGE       (1 << ADC_RESOLUTION) // (2^10 = 1024)
 #define ADC_FULL_SCALE_VOLTAGE 5.0                   // Full-Scale Voltage
 
-#define LDR_DIFF_THRESHOLD 50
+#define LDR_DIFF_THRESHOLD 100
 #define LDR_LOCK_THRESHOLD 800
 
-#define MOTOR_L_FORWARD_PWM_VALUE 170
-#define MOTOR_R_FORWARD_PWM_VALUE 150
+#define MOTOR_L_FORWARD_PWM_VALUE 120
+#define MOTOR_R_FORWARD_PWM_VALUE 100
 
-#define MOTOR_L_REVERSE_PWM_VALUE -170
+#define MOTOR_L_REVERSE_PWM_VALUE -150
 #define MOTOR_R_REVERSE_PWM_VALUE -150
 
 #define MOTOR_L_LEFT_TURN_PWM_VALUE 100
@@ -31,33 +32,22 @@
 
 #define MOTOR_TURN_DURATION_MS 250
 
-#define UPDATE_PERIOD_MS 1000
+#define UPDATE_PERIOD_MS 500
+
+#define PWM_VALUE_MAX 255
+#define PWM_VALUE_MIN -255
 
 // Function to measure LDR Circuit Voltage
-void MeasureLDRCircuitVoltage(int PinNumber)
+int MeasureLDRCircuitVoltage(int PinNumber)
 {
   int AnalogReadResult;
-  float LDRCircuitVoltage;
-
-  const float VoltagePerADCCode = (ADC_FULL_SCALE_VOLTAGE / ADC_OUTPUT_RANGE);
-
+  
   // Measure the voltage from the LDR circuit using ADC
   AnalogReadResult = analogRead(PinNumber);
   
-  LDRCircuitVoltage = AnalogReadResult * VoltagePerADCCode;
-  
-  // Output results to console
-  Serial.print("ADC Output Code: ");
-  Serial.println(AnalogReadResult);
-  Serial.print("LDR Circuit Voltage: ");
-  Serial.print(LDRCircuitVoltage);
-  Serial.println("V");
-  Serial.println();
+  return AnalogReadResult;
 
-
-  return LDRCircuitVoltage;
 }
-
 // Function to Set Motor Control Parameters
 void SetMotorControlParameters(int PWMValue,
                                unsigned int HBridgeControlPinA,
@@ -100,6 +90,12 @@ void setup()
   // Initialise UART
   Serial.begin(UART_BAUDRATE);
   
+  // Initialise GPIO
+  pinMode(MOTOR_L1_PIN, OUTPUT);
+  pinMode(MOTOR_L2_PIN, OUTPUT);
+  pinMode(MOTOR_R1_PIN, OUTPUT);
+  pinMode(MOTOR_R2_PIN, OUTPUT);
+  
   // Initialise Motor Driver
   digitalWrite(MOTOR_L1_PIN, LOW);
   digitalWrite(MOTOR_L2_PIN, LOW);
@@ -107,16 +103,15 @@ void setup()
   digitalWrite(MOTOR_R2_PIN, LOW);
   
   // Output message to console
-  Serial.println("B37VB Light Tracking Basics Demonstration");
+  Serial.println("B37VB Motor Control and LDR tracking Basics Demonstration");
   Serial.print("Version: ");
   Serial.println(FIRMWARE_VERSION);
-  Serial.println();
-}
 
+}
 // Loop function runs over and over again forever
 void loop()
 {
-  int LeftLDRValue;
+ int LeftLDRValue;
   int RightLDRValue;
   
   unsigned int LDRDiffMagnitude;
@@ -126,18 +121,8 @@ void loop()
   
   unsigned long TurnDuration;
   
-  Serial.println("Left LDR Circuit:");
-  MeasureLDRCircuitVoltage(LDR_L_PIN);
-  
-  Serial.println("Right LDR Circuit:");
-  MeasureLDRCircuitVoltage(LDR_R_PIN);
-  
-  // Add blocking delay (in ms)
-  delay(UPDATE_PERIOD_MS);
-
-
-  LeftLDRValue  = (LDR_L_PIN);
-  RightLDRValue = (LDR_R_PIN);
+  LeftLDRValue  = MeasureLDRCircuitVoltage(LDR_L_PIN);
+  RightLDRValue = MeasureLDRCircuitVoltage(LDR_R_PIN);
   
   LDRDiffMagnitude = abs(LeftLDRValue - RightLDRValue);
   
@@ -177,5 +162,8 @@ void loop()
                      RightMotorPWMValue,
                      0);
   }
+
+
+  
 }
 
