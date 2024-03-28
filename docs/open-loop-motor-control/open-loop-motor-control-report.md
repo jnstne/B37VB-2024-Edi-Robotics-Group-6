@@ -14,7 +14,7 @@ When both motors pwm were set to identical parameters of 100 each, the robot tur
 | 120              | 100                | 1             | 2.8          | 2.7            | 3.0           |  2.83                | 0.353        |  
 | 145              | 130                | 1             | 2.37         | 2.47           | 2.33          |  2.37                | 0.422        |  
 
-##**A Table Showing the PWM Values of Each Motor and the Direction the Robot Turns**
+### A Table Showing the PWM Values of Each Motor and the Direction the Robot Turns
 | Motor Left (PWM) | Motor Right        | Direction     |
 | :---:            |       :---:        |      :---:    | 
 | 100              | 100                | left          |
