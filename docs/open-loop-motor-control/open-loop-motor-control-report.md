@@ -1,7 +1,7 @@
 # Motor charactarisation Report - B37VB - Aidan Johnstone & Seán Kelly
 
 ## Introduction
-We set out to characterise our motors and find the PWM values each motor must be set to, to make this robot drive straight at several different speeds. During our project we were successfully able to characterise our motors for a range of speeds. At each speed a different difference in PWM is required to make the motors drive straight. This is explained in more detail below.
+We set out to characterise our motors and find the PWM values each motor must be set to to make this robot drive straight at several different speeds. During our project we were successfully able to characterise our motors for a range of speeds. At each speed a different difference in PWM is required to make the motors drive straight
 
 ## Method
 ### Direction Testing
