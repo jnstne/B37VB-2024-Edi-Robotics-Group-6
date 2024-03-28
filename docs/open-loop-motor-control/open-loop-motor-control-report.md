@@ -1,3 +1,5 @@
+
+|                                                          gggggg                                                                                   |
 | Motor Left (PWM) | Motor Right (PWM)  | Distance (m)  | Time 1 (s)   | Time 2 (s)     | Time 3 (s)    |  Average Time (s)    |  Speed (m/s) |            
 | :---:            |       :---:        |      :---:    |     :---:    |      :---:     |    :---:      |        :---:         |         :---:|  
 | 100              | 85                 | 1             | 3.96         | 3.62           | 3.72          |  3.76                | 0.266        |  
