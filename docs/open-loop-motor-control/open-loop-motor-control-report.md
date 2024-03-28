@@ -10,9 +10,16 @@ We set out tocharacterise our motors and find the differences in power that are 
 - If robot turns left increase PWM of Left Motor or decrease PWM of right motor
 - If robot turns right increase PWM of Right motor or decrease PWM of left motor 
 - Repeat until robot moves straight
+
 ### Speed Testing
-
-
+- Place a line of insulation tape on the ground (this is our start line)
+- Using a tape measure mesuyre 1m away from the start line and place another line of insulation tape on the ground (this is our finish line)
+- Set the motor PWMs to their lowest straight driving values and record these PWM values
+- Place the robot on the start line and turn it on
+- Using a stopwatch record the time taken for the robot to cross the finish line and record
+- Repeat 2 more times and calculate the average time and record
+- Using   Speed = Distance/time   calculate the speed of the robot and record
+- Repeat for several higher PWM values and record the results
 When both motors pwm were set to identical parameters of 100 each, the robot turned left. To fix this we brought the right motor down to 85 while leaving the left at 100, this resulted in the robot driving straight. We then decided to up the speed putting the left motor at 120 and the right at 100 the robot once again drove straight. We then decided to try another higher speed and set the left to 150 and right to 130, this time the robot started turning slightly right after a few seconds of moving straight so we lowered the left to 145 and the robot started moving straight ahead again. We thenm decided top try another higher speed and so we set the left pwn to 170 and the right pwm to 150 which caused the robot to move mostly straight but drifting to the left, so we upped the left pwm to 172 and the robot moved straight again. From this we were able to determine that the left motor requires a higher pwm setting than the right.
 
 ## Results
