@@ -5,10 +5,10 @@ We set out tocharacterise our motors and find the differences in power that are 
 
 ## Method
 ### Direction Testing
-- First we set both motors PWM to the same value
-- Turn robot on and record direction it moves in
-- If robot moves to left increase PWM of Left Motor or decrease PWM of right motor
-- If robot turns right increasde PWM opf Right motor or decrease PWM of left motor 
+- First we set both motors PWMs to the same value
+- Turn the robot on and record the direction in which it moves (left/right/straight)
+- If robot turns left increase PWM of Left Motor or decrease PWM of right motor
+- If robot turns right increase PWM of Right motor or decrease PWM of left motor 
 - Repeat until robot moves straight
 ### Speed Testing
 
