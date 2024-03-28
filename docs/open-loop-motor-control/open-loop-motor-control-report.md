@@ -13,7 +13,7 @@ We set out to characterise our motors and find the PWM values each motor must be
 
 ### Speed Testing
 - Place a line of insulation tape on the ground (this is our start line)
-- Using a tape measure mesuyre 1m away from the start line and place another line of insulation tape on the ground (this is our finish line)
+- Using a tape measure 1m away from the start line and place another line of insulation tape on the ground (this is our finish line)
 - Set the motor PWMs to their lowest straight driving values and record these PWM values
 - Place the robot on the start line and turn it on
 - Using a stopwatch record the time taken for the robot to cross the finish line and record
