@@ -16,14 +16,17 @@ When both motors pwm were set to identical parameters of 100 each, the robot tur
 
 
 ###𝐀 𝐭𝐚𝐛𝐥𝐞 𝐬𝐡𝐨𝐰𝐢𝐧𝐠 𝐭𝐡𝐞 𝐏𝐖𝐌 𝐯𝐚𝐥𝐮𝐞𝐬 𝐨𝐟 𝐞𝐚𝐜𝐡 𝐦𝐨𝐭𝐨𝐫 𝐚𝐧𝐝 𝐭𝐡𝐞 𝐝𝐢𝐫𝐞𝐜𝐭𝐢𝐨𝐧 𝐢𝐭 𝐬𝐞𝐧𝐝𝐬 𝐭𝐡𝐞 𝐫𝐨𝐛𝐨𝐭 𝐢𝐧.
-| Motor Left (PWM) | Motor Right        | Direction     |
-| :---:            |       :---:        |      :---:    | 
-| 100              | 100                | left          |
-| 100              | 85                 | straight      |
-| 120              | 100                | straight      |
-| 150              | 130                | right         |
-| 145              | 130                | straight      |
-| 170              | 150                | drifts to left|
-| 172              | 150                | straight      |
+| Motor Left (PWM) | Motor Right        | Direction      |
+| :---:            |       :---:        |      :---:     | 
+| 100              | 100                | left           |
+| 100              | 85                 | straight       |
+| 120              | 100                | straight       |
+| 150              | 130                | drifts to right|
+| 145              | 130                | straight       |
+| 170              | 150                | drifts to left |
+| 172              | 150                | straight       |
 
 ## Conclusion
+
+We found this experiment interesting as we found out relatively quickly that the robot's right motor works faster than its left one. when the PWM values of both motors were at 100 our robot went significantly left, using our intuition we figured out what would be a better PWM value for the right motor to start with being 85. for us, the anomoly was when the robot drifted right slightly when we upped both PWM values by 20 (Left 150, Right 130). of course not every increase of PWM values would be by the same increments, increasing by 20 worked before but it just wasnt as accurate the second time around. we found that when the robot's PWM values are lower it struggles to stay straight and then beyond this expereiment we realised when it gets to greater PWM values than 200 it struggles again. it seems that the robot is at its most consistent when its speed is at a rather mid level. 
+⚔
