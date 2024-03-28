@@ -1,5 +1,4 @@
-# Motor charactarisation Report - B37VB - 
-## Aidan Johnstone & Sean Kelly
+# Motor charactarisation Report - B37VB - Aidan Johnstone & Sean Kelly
 
 
 𝐀 𝐭𝐚𝐛𝐥𝐞 𝐬𝐡𝐨𝐰𝐢𝐧𝐠 𝐭𝐡𝐞 𝐏𝐖𝐌 𝐯𝐚𝐥𝐮𝐞𝐬 𝐨𝐟 𝐞𝐚𝐜𝐡 𝐦𝐨𝐭𝐨𝐫 𝐚𝐧𝐝 𝐭𝐡𝐞𝐢𝐫 𝐜𝐨𝐫𝐫𝐞𝐬𝐩𝐨𝐧𝐝𝐢𝐧𝐠 𝐬𝐩𝐞𝐞𝐝.
