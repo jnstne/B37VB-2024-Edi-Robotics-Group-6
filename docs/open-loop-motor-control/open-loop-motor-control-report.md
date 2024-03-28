@@ -1,11 +1,15 @@
 # Motor charactarisation Report - B37VB - Aidan Johnstone & Seán Kelly
 
 ## Introduction
-WE set out tocharacterise our motors and find the differences in power that are necessary to make said motors function as is required. 
+We set out tocharacterise our motors and find the differences in power that are necessary to make said motors function as is required. 
 
 ## Method
 ### Direction Testing
-
+- First we set both motors PWM to the same value
+- Turn robot on and record direction it moves in
+- If robot moves to left increase PWM of Left Motor or decrease PWM of right motor
+- If robot turns right increasde PWM opf Right motor or decrease PWM of left motor 
+- Repeat until robot moves straight
 ### Speed Testing
 
 
