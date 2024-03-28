@@ -15,6 +15,7 @@
 | 120              | 100                | straight      |
 | 150              | 130                | right         |
 | 145              | 130                | straight      |
+| 170                 | 150             | drifts to left               |
 | 172              | 150                | straight               |
 
 
