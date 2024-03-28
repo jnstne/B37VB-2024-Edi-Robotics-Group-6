@@ -15,6 +15,7 @@
 | 120              | 100                | straight      |
 | 150              | 130                | right         |
 | 145              | 130                | straight      |
+| 172              | 150                |               |
 
 
 When both motors pwm were set to identical parameters of 100 each, the robot turned left. To fix this we brought the right motor down to 85 while leaving the left at 100, this resulted in the robot driving straight. We then decided to up the speed putting the left motor at 120 and the right at 100 the robot once again drove straight. We then decided to try another higher speed and set the left to 150 and right to 130, this time the robot started turning right so we lowered the left to 145 and the robot started moving straight ahead again. From this we were able to determine that the left motor requires a higher pwm setting than the right.
