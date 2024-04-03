@@ -7,8 +7,8 @@
 #define MOTOR_R1_PIN 9
 #define MOTOR_R2_PIN 10
 
-#define LDR_L_PIN A2 // Mapped to ATMega328P PCO (Pin 23) on Arduino Uno
-#define LDR_R_PIN A1 // Mapped to ATMega328P PC1 (Pin 24) on Arduino Uno
+#define LDR_L_PIN A2 
+#define LDR_R_PIN A1 
 
 #define ADC_RESOLUTION         10                    
 #define ADC_OUTPUT_RANGE       (1 << ADC_RESOLUTION)
@@ -36,8 +36,8 @@
 #define PWM__MAX 120
 #define PWM__MIN -120
 
-// Function made to measure LDR Circuit Voltage
-int MeasureLDRVoltage(int PinNumber)
+// Function made to measure the LDR Circuit Voltage
+int LDRVoltage(int PinNumber)
 {
   int AnalogReadResult;
   
@@ -49,18 +49,18 @@ int MeasureLDRVoltage(int PinNumber)
 }
 // Function to Set Motor Control Parameters
 void Parameters(int PWM,
-                               unsigned int HBridgePinA,
-                               unsigned int HBridgePinB)
+                               unsigned int HBridgePin1,
+                               unsigned int HBridgePin2)
 {
   if (PWM >= 0)
   {
-    analogWrite(HBridgePinB, PWM);
-    digitalWrite(HBridgePinA, LOW);
+    analogWrite(HBridgePin2, PWM);
+    digitalWrite(HBridgePin1, LOW);
   }
   else
   {
-    analogWrite(HBridgePinA, -PWM);
-    digitalWrite(HBridgePinB, LOW);
+    analogWrite(HBridgePin1, -PWM);
+    digitalWrite(HBridgePin2, LOW);
   }
 }
 
@@ -120,8 +120,8 @@ void loop()
   
   unsigned long TurnDuration;
   
-  LeftLDR  = MeasureLDRVoltage(LDR_L_PIN);
-  RightLDR = MeasureLDRVoltage(LDR_R_PIN);
+  LeftLDR  = LDRVoltage(LDR_L_PIN);
+  RightLDR = LDRVoltage(LDR_R_PIN);
   
   LDRDiffMagnitude = abs(LeftLDR - RightLDR);
   
