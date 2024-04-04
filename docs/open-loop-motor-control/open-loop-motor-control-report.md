@@ -24,7 +24,7 @@ We set out to characterise our motors and find the PWM values each motor must be
 ## Results
 
 ### A Table Showing the PWM Values of Each Motor and the Direction the Robot Turns
-| Motor Left (PWM) | Motor Right        | Direction     |
+| Motor Left (PWM) | Motor Right (PWM)       | Direction     |
 | :---:            |       :---:        |      :---:    | 
 | 100              | 100                | left          |
 | 100              | 85                 | straight      |
